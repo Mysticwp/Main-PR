@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export function SiteFooter() {
   return (
     <footer className="mpr-footer bg-white">
@@ -19,9 +21,9 @@ export function SiteFooter() {
       </div>
       <div className="container mpr-footer__bottom">
         <div className="mpr-footer__links">
-          <a href="/">Home</a>
-          <a href="/blogs">Blogs</a>
-          <a href="/contact">Contact</a>
+          <Link href="/">Home</Link>
+          <Link href="/blogs">Blogs</Link>
+          <Link href="/contact">Contact</Link>
         </div>
         <p>
           <a href="https://mystic-advertising.com/" target="_blank" rel="noreferrer">

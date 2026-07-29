@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useState } from "react";
 
 export type ServiceItem = {
@@ -34,7 +35,7 @@ export function ServicesAccordion({ services }: { services: ServiceItem[] }) {
             <div className="service-text">
               <h2>{service.title}</h2>
               {service.summary ? <p>{service.summary}</p> : null}
-              <a href={service.href}>Read more &gt;</a>
+              <Link href={service.href}>Read more &gt;</Link>
             </div>
           </article>
         );

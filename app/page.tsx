@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { FaqSection } from "@/components/faq-section";
 import { FeaturedCarousel } from "@/components/featured-carousel";
 import { ProcessSection } from "@/components/process-section";
@@ -103,18 +104,18 @@ export default async function HomePage() {
       <main className="mpr-home">
         <header className="mpr-header">
           <div className="mpr-nav container">
-            <a href="/" className="mpr-logo">
+            <Link href="/" className="mpr-logo">
               <img
                 src="https://mysticpr.com/wp-content/uploads/2024/10/PR.png"
                 alt="Mystic PR"
               />
-            </a>
+            </Link>
             <nav className="mpr-menu">
-              <a href="/">Home</a>
-              <a href="/about">About</a>
-              <a href="/services">Services</a>
-              <a href="/blogs">Insights</a>
-              <a href="/contact">Contact</a>
+              <Link href="/">Home</Link>
+              <Link href="/about">About</Link>
+              <Link href="/services">Services</Link>
+              <Link href="/blogs">Insights</Link>
+              <Link href="/contact">Contact</Link>
             </nav>
           </div>
         </header>
@@ -166,9 +167,9 @@ export default async function HomePage() {
                     outreach, crisis communication, and reputation management that
                     earns lasting confidence.
                   </p>
-                  <a href="/contact" className="button-cta main-cta">
+                  <Link href="/contact" className="button-cta main-cta">
                     Start a Project
-                  </a>
+                  </Link>
                 </div>
               </div>
             </div>
@@ -261,9 +262,9 @@ export default async function HomePage() {
                 <span className="mpr-kicker">BLOGS &amp; INSIGHTS</span>
                 <h2 className="mpr-section-title">Recent Blog Updates</h2>
               </div>
-              <a href="/blogs" className="mpr-text-link">
+              <Link href="/blogs" className="mpr-text-link">
                 See all blogs &gt;
-              </a>
+              </Link>
             </div>
             <div className="mpr-insights__grid">
               {posts.map((post) => (
@@ -342,9 +343,9 @@ export default async function HomePage() {
           </div>
           <div className="container mpr-footer__bottom">
             <div className="mpr-footer__links">
-              <a href="/">Home</a>
-              <a href="/blogs">Blogs</a>
-              <a href="/contact">Contact</a>
+              <Link href="/">Home</Link>
+              <Link href="/blogs">Blogs</Link>
+              <Link href="/contact">Contact</Link>
             </div>
             <p>
               <a href="https://mystic-advertising.com/" target="_blank" rel="noreferrer">

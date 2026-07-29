@@ -489,7 +489,7 @@ img {
 
 .mpr-section-head--row {
   display: flex;
-  align-items: end;
+  align-items: flex-end;
   justify-content: space-between;
   gap: 1.5rem;
   margin-bottom: 2rem;
@@ -657,7 +657,7 @@ img {
 
 .mpr-stories__top {
   display: flex;
-  align-items: end;
+  align-items: flex-end;
   justify-content: space-between;
   gap: 1.5rem;
   margin-bottom: 1.5rem;
@@ -844,7 +844,7 @@ img {
 
 .mpr-featured__head {
   display: flex;
-  align-items: end;
+  align-items: flex-end;
   justify-content: space-between;
   gap: 1.5rem;
   margin-bottom: 1.75rem;
