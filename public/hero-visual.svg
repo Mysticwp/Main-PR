@@ -1,0 +1,20 @@
+<svg width="900" height="1080" viewBox="0 0 900 1080" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="900" height="1080" rx="48" fill="#0B0A10"/>
+  <rect x="62" y="56" width="776" height="968" rx="40" fill="url(#paint0_linear_1_2)"/>
+  <rect x="120" y="126" width="302" height="384" rx="28" fill="#F2E5D0" fill-opacity="0.92"/>
+  <rect x="454" y="126" width="258" height="248" rx="28" fill="#1A1623"/>
+  <rect x="454" y="406" width="258" height="428" rx="28" fill="#D5AB67" fill-opacity="0.9"/>
+  <rect x="228" y="566" width="194" height="268" rx="97" fill="#2F243A"/>
+  <circle cx="223" cy="232" r="74" fill="#D5AB67"/>
+  <circle cx="608" cy="246" r="58" fill="#F2E5D0" fill-opacity="0.85"/>
+  <path d="M582 574C582 542.52 607.52 517 639 517H726V834H639C607.52 834 582 808.48 582 777V574Z" fill="#241A10"/>
+  <path d="M164 730C164 703.49 185.49 682 212 682H304C330.51 682 352 703.49 352 730V834H212C185.49 834 164 812.51 164 786V730Z" fill="#F2E5D0"/>
+  <text x="118" y="916" fill="#F2E5D0" font-family="Arial, sans-serif" font-size="38" letter-spacing="4">MYSTIC PR</text>
+  <defs>
+    <linearGradient id="paint0_linear_1_2" x1="450" y1="56" x2="450" y2="1024" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#17131E"/>
+      <stop offset="0.56" stop-color="#0C0B10"/>
+      <stop offset="1" stop-color="#EBD8BD"/>
+    </linearGradient>
+  </defs>
+</svg>

@@ -1,0 +1,17 @@
+<svg width="1200" height="900" viewBox="0 0 1200 900" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="900" rx="40" fill="#EFE4D2"/>
+  <rect x="76" y="72" width="1048" height="756" rx="32" fill="#111018"/>
+  <rect x="138" y="142" width="298" height="560" rx="28" fill="#D5AB67"/>
+  <rect x="470" y="142" width="246" height="256" rx="28" fill="#F4ECDD"/>
+  <rect x="470" y="430" width="246" height="272" rx="28" fill="#2B2037"/>
+  <rect x="750" y="142" width="312" height="560" rx="28" fill="url(#paint0_linear_1_2)"/>
+  <circle cx="871" cy="306" r="78" fill="#F2E5D0"/>
+  <circle cx="290" cy="290" r="88" fill="#211826"/>
+  <text x="140" y="780" fill="#F2E5D0" font-family="Arial, sans-serif" font-size="42" letter-spacing="8">SUCCESS STORIES</text>
+  <defs>
+    <linearGradient id="paint0_linear_1_2" x1="906" y1="142" x2="906" y2="702" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#1C1823"/>
+      <stop offset="1" stop-color="#0D0B11"/>
+    </linearGradient>
+  </defs>
+</svg>
