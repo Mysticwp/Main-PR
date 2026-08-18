@@ -12,7 +12,15 @@ export type ProcessStep = {
   description: string;
 };
 
-export function ProcessSection({ steps }: { steps: ProcessStep[] }) {
+export function ProcessSection({
+  steps,
+  kicker = "How we work",
+  title = "Our Process"
+}: {
+  steps: ProcessStep[];
+  kicker?: string;
+  title?: string;
+}) {
   const sectionRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
@@ -91,8 +99,8 @@ export function ProcessSection({ steps }: { steps: ProcessStep[] }) {
     <section ref={sectionRef} className="mpr-process section bg-white">
       <div className="container">
         <div className="mpr-process-heading">
-          <span className="mpr-kicker">How we work</span>
-          <h2 className="mpr-section-title">Our Process</h2>
+          {kicker ? <span className="mpr-kicker">{kicker}</span> : null}
+          <h2 className="mpr-section-title">{title}</h2>
         </div>
 
         <div className="mpr-process-track">

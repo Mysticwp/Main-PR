@@ -10,7 +10,17 @@ export type StorySlide = {
   outcome: string;
 };
 
-export function StoriesSlider({ stories }: { stories: StorySlide[] }) {
+export function StoriesSlider({
+  stories,
+  kicker = "CASE RESULTS",
+  title = "Our Success Stories",
+  glow = false
+}: {
+  stories: StorySlide[];
+  kicker?: string;
+  title?: string;
+  glow?: boolean;
+}) {
   const [index, setIndex] = useState(0);
   const [isAnimating, setIsAnimating] = useState(false);
 
@@ -37,15 +47,22 @@ export function StoriesSlider({ stories }: { stories: StorySlide[] }) {
   if (!stories.length) return null;
 
   return (
-    <section className="mpr-stories section">
+    <section className={`mpr-stories section${glow ? " mpr-stories--glow" : ""}`}>
+      {glow ? (
+        <>
+          <div className="mpr-im-approach__orb mpr-im-approach__orb--a" aria-hidden="true" />
+          <div className="mpr-im-approach__orb mpr-im-approach__orb--b" aria-hidden="true" />
+        </>
+      ) : null}
       <div className="container">
         <div className="mpr-stories__top">
           <div className="mpr-section-head mpr-section-head--light">
-            <span className="mpr-kicker mpr-kicker--light">CASE RESULTS</span>
+            <span className="mpr-kicker mpr-kicker--light">{kicker}</span>
             <h2 className="mpr-section-title mpr-section-title--light">
-              Our Success Stories
+              {title}
             </h2>
           </div>
+          {stories.length > 1 ? (
           <div className="mpr-stories__nav">
             <button
               type="button"
@@ -64,6 +81,7 @@ export function StoriesSlider({ stories }: { stories: StorySlide[] }) {
               ›
             </button>
           </div>
+          ) : null}
         </div>
 
         <div className="mpr-stories__stage">
@@ -95,6 +113,7 @@ export function StoriesSlider({ stories }: { stories: StorySlide[] }) {
           })}
         </div>
 
+        {stories.length > 1 ? (
         <div className="mpr-stories__dots" role="tablist" aria-label="Story slides">
           {stories.map((item, dotIndex) => (
             <button
@@ -106,6 +125,7 @@ export function StoriesSlider({ stories }: { stories: StorySlide[] }) {
             />
           ))}
         </div>
+        ) : null}
       </div>
     </section>
   );

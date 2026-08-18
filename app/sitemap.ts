@@ -30,7 +30,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.8
     },
     ...services.map((service) => ({
-      url: `${baseUrl}/services/${service.slug}`,
+      url: `${baseUrl}${service.href}`,
       lastModified: new Date(),
       changeFrequency: "monthly" as const,
       priority: 0.75

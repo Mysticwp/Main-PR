@@ -7,7 +7,13 @@ export type FaqItem = {
   answer: string;
 };
 
-export function FaqSection({ faqs }: { faqs: FaqItem[] }) {
+export function FaqSection({
+  faqs,
+  intro = "Straight answers on services, timelines, and how Mystic PR helps companies earn visibility with confidence."
+}: {
+  faqs: FaqItem[];
+  intro?: string;
+}) {
   const [openIndex, setOpenIndex] = useState(0);
 
   return (
@@ -18,10 +24,7 @@ export function FaqSection({ faqs }: { faqs: FaqItem[] }) {
           <h2 id="faq-heading" className="mpr-section-title">
             Frequently Asked Questions
           </h2>
-          <p>
-            Straight answers on services, timelines, and how Mystic PR helps
-            companies earn visibility with confidence.
-          </p>
+          <p>{intro}</p>
         </div>
 
         <div className="mpr-faq__list">

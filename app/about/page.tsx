@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { AboutBuzzRing } from "@/components/about-buzz-ring";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
 import { SmoothScroll } from "@/components/smooth-scroll";
@@ -21,7 +22,7 @@ export default function AboutPage() {
       <main className="mpr-about">
         <section className="mpr-about-hero section bg-white">
           <div className="container mpr-about-hero__grid">
-            <div>
+            <div className="mpr-about-hero__copy-wrap">
               <span className="mpr-kicker">About</span>
               <h1 className="mpr-about-hero__title">The Story Behind Our Vision</h1>
               <p className="mpr-about-hero__copy">
@@ -36,9 +37,7 @@ export default function AboutPage() {
               </p>
             </div>
 
-            <div className="mpr-about-ring" aria-hidden="false">
-              <p>We Build The Buzz That People Don’t Forget.</p>
-            </div>
+            <AboutBuzzRing />
           </div>
         </section>
 
@@ -56,9 +55,9 @@ export default function AboutPage() {
           </div>
         </section>
 
-        <section className="mpr-about-team section bg-blue">
+        <section className="mpr-about-team section">
           <div className="container">
-            <h2 className="mpr-section-title mpr-section-title--light">
+            <h2 className="mpr-section-title mpr-section-title--light mpr-about-team__title">
               Meet The Team
             </h2>
             <div className="mpr-about-team__grid">
@@ -67,8 +66,6 @@ export default function AboutPage() {
                   <div className="mpr-about-team__photo">
                     <img src={member.image} alt={member.name} loading="lazy" />
                   </div>
-                  <h3>{member.name}</h3>
-                  <p>{member.role}</p>
                 </article>
               ))}
             </div>

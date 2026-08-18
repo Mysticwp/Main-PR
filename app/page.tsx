@@ -1,8 +1,10 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import { FaqSection } from "@/components/faq-section";
 import { FeaturedCarousel } from "@/components/featured-carousel";
 import { ProcessSection } from "@/components/process-section";
 import { ServicesAccordion } from "@/components/services-accordion";
+import { SiteHeader } from "@/components/site-header";
 import { SmoothScroll } from "@/components/smooth-scroll";
 import { StoriesSlider } from "@/components/stories-slider";
 import { getLatestPosts } from "@/lib/blog";
@@ -50,6 +52,28 @@ const clientLogos = [
   "https://mysticpr.com/wp-content/uploads/2024/11/Logos-Resize-BW-13.png",
   "https://mysticpr.com/wp-content/uploads/2024/11/Logos-Resize-BW-12.png"
 ];
+
+const homeTitle = "PR Agency Dubai | Influencer Marketing & Media Relations";
+const homeDescription =
+  "Strategic PR agency in Dubai delivering influencer marketing, media outreach, press release distribution and crisis communication for UAE brands since 2011.";
+
+export const metadata: Metadata = {
+  title: { absolute: homeTitle },
+  description: homeDescription,
+  alternates: { canonical: "https://mysticpr.com" },
+  openGraph: {
+    title: homeTitle,
+    description: homeDescription,
+    url: "https://mysticpr.com",
+    siteName: "Mystic PR",
+    type: "website"
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: homeTitle,
+    description: homeDescription
+  }
+};
 
 function LogoRibbon({ reverse = false }: { reverse?: boolean }) {
   const half = [...clientLogos, ...clientLogos, ...clientLogos];
@@ -101,24 +125,8 @@ export default async function HomePage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
+      <SiteHeader theme="dark" activeHref="/" />
       <main className="mpr-home">
-        <header className="mpr-header">
-          <div className="mpr-nav container">
-            <Link href="/" className="mpr-logo">
-              <img
-                src="https://mysticpr.com/wp-content/uploads/2024/10/PR.png"
-                alt="Mystic PR"
-              />
-            </Link>
-            <nav className="mpr-menu">
-              <Link href="/">Home</Link>
-              <Link href="/about">About</Link>
-              <Link href="/services">Services</Link>
-              <Link href="/blogs">Insights</Link>
-              <Link href="/contact">Contact</Link>
-            </nav>
-          </div>
-        </header>
 
         {/* 1. Hero */}
         <section className="home-hero_section">
@@ -159,7 +167,7 @@ export default async function HomePage() {
             <div className="container-wide">
               <div className="home_hero-content">
                 <h1 className="home_hero_title">
-                  We’re The Silent Strength Behind the Loudest Brands
+                  PR Agency in Dubai — Behind the Leading Brands
                 </h1>
                 <div className="hero-subcontent">
                   <p className="home_hero_desc">
@@ -192,13 +200,17 @@ export default async function HomePage() {
               </p>
             </div>
             <p className="mpr-intro__body">
-              We are committed to enhancing our clients’ reputations through
-              strategic storytelling and effective media engagement. As one of the
-              leading PR agencies in Dubai, we specialize in developing strategic
-              communication campaigns that strengthen brand reputation and amplify
-              media presence. Our expert PR consultancy empowers clients to build
-              credibility, sustain positive visibility, and foster enduring
-              relationships across the region’s dynamic media landscape.
+              Mystic PR has delivered strategic communication campaigns for real
+              estate developers, hospitality brands, and consumer businesses
+              across Dubai, Abu Dhabi, and the wider GCC. As part of the Mystic
+              Advertising group, we combine media relations, influencer
+              marketing, crisis communication, and talent management under one
+              roof — helping clients build credibility, control their narrative,
+              and stay visible across the region&apos;s fast-moving media
+              landscape. Our team has secured coverage in Gulf News, Arabian
+              Business, Khaleej Times, The National, and Forbes Middle East, and
+              manages campaigns for property launches, celebrity partnerships,
+              and brand reputation programs.
             </p>
           </div>
         </section>
@@ -221,7 +233,11 @@ export default async function HomePage() {
         </div>
 
         {/* 5. Our Process */}
-        <ProcessSection steps={[...processSteps]} />
+        <ProcessSection
+          kicker="HOW WE WORK"
+          title="Our PR Process"
+          steps={[...processSteps]}
+        />
 
         {/* 6. Success Stories */}
         <StoriesSlider stories={[...successStories]} />
@@ -288,7 +304,10 @@ export default async function HomePage() {
         </section>
 
         {/* 10. FAQ */}
-        <FaqSection faqs={[...faqs]} />
+        <FaqSection
+          faqs={[...faqs]}
+          intro="Answers on how a Dubai PR agency works, influencer marketing in the UAE, crisis support, and getting started with Mystic PR."
+        />
 
         {/* 11. Contact / CTA */}
         <section id="contact" className="mpr-contact section bg-white">
