@@ -130,6 +130,41 @@ img {
   width: 6.4rem;
 }
 
+.mpr-burger {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  width: 2rem;
+  height: 2rem;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+  z-index: 52;
+}
+
+.mpr-burger span {
+  display: block;
+  width: 100%;
+  height: 2px;
+  background: currentColor;
+  border-radius: 2px;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.mpr-header--open .mpr-burger span:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+
+.mpr-header--open .mpr-burger span:nth-child(2) {
+  opacity: 0;
+}
+
+.mpr-header--open .mpr-burger span:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
 .mpr-menu {
   display: flex;
   align-items: center;
@@ -3840,13 +3875,86 @@ img {
     --nav-height: 3.5rem;
   }
 
+  .mpr-burger {
+    display: flex;
+  }
+
   .mpr-menu {
-    gap: 1rem;
-    font-size: 0.875rem;
+    position: fixed;
+    inset: var(--nav-height) 0 0;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 2rem var(--pad);
+    gap: 0;
+    background: inherit;
+    overflow-y: auto;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-0.75rem);
+    transition: opacity 0.25s ease, transform 0.25s ease, visibility 0.25s ease;
+    font-size: 1.1rem;
+  }
+
+  .mpr-header--dark .mpr-menu {
+    background: var(--black);
+  }
+
+  .mpr-header--light .mpr-menu {
+    background: var(--white);
+  }
+
+  .mpr-menu.is-open {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+
+  .mpr-menu > a,
+  .mpr-menu__dropdown {
+    width: 100%;
+    padding: 0.85rem 0;
+    border-bottom: 1px solid rgba(128, 128, 128, 0.15);
+  }
+
+  .mpr-menu__dropdown::after {
+    display: none;
+  }
+
+  .mpr-menu__panel {
+    position: static !important;
+    min-width: 0;
+    padding: 0.25rem 0 0 1rem;
+    background: transparent !important;
+    border: 0 !important;
+    box-shadow: none !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: none !important;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .mpr-header--dark .mpr-menu__panel,
+  .mpr-header--light .mpr-menu__panel {
+    background: transparent !important;
+    border: 0 !important;
+    box-shadow: none !important;
+  }
+
+  .mpr-menu__panel a {
+    padding: 0.55rem 0;
+    font-size: 0.95rem;
+  }
+
+  .mpr-header--dark .mpr-menu__panel a:hover,
+  .mpr-menu__panel a:hover {
+    background: transparent;
+    opacity: 1;
   }
 
   .home-hero_section {
-    min-height: 32rem;
+    height: auto;
+    min-height: 85svh;
   }
 
   .home_wrap-cols {
@@ -3858,8 +3966,18 @@ img {
   }
 
   .home_hero_title {
-    max-width: 35rem;
-    font-size: 3.1rem;
+    max-width: 100%;
+    font-size: clamp(2.2rem, 9vw, 3.6rem);
+  }
+
+  .home_hero_desc {
+    font-size: 1rem;
+    max-width: 100%;
+  }
+
+  .home_hero-content {
+    padding-top: calc(var(--nav-height) + 3rem);
+    padding-bottom: 2.5rem;
   }
 
   .mpr-team-grid,
@@ -3889,6 +4007,11 @@ img {
     grid-template-columns: 3.25rem 1fr;
   }
 
+  .mpr-footer__grid {
+    grid-template-columns: 1fr;
+    gap: 1.75rem;
+  }
+
   .mpr-footer__bottom {
     flex-direction: column;
   }
@@ -3899,7 +4022,9 @@ img {
   .mpr-svc-related__grid,
   .mpr-cm-related .mpr-svc-related__grid,
   .mpr-tm-cats__grid,
-  .mpr-tm-work__grid {
+  .mpr-tm-work__grid,
+  .mpr-svc-steps,
+  .mpr-svc-offerings__grid {
     grid-template-columns: 1fr;
   }
 
@@ -3932,10 +4057,15 @@ img {
   }
 
   .mpr-im-hero__media {
-    width: auto;
-    max-width: min(18rem, 100%);
-    height: 28rem;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    min-height: 0;
     margin-inline: auto;
+  }
+
+  .mpr-im-hero__media video {
+    max-height: 60vh;
   }
 
   .mpr-im-why__watermark-track span {
@@ -3966,7 +4096,144 @@ img {
     width: 100%;
     max-height: none;
     margin-left: 0;
-    max-width: 28rem;
+    max-width: 100%;
+  }
+
+  .mpr-contact-hero h1 {
+    font-size: clamp(2.8rem, 12vw, 5rem);
+  }
+
+  .mpr-contact-hero__grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .mpr-contact-form-wrap__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .mpr-contact-form__row {
+    grid-template-columns: 1fr;
+  }
+
+  .mpr-cm-contact {
+    grid-template-columns: 1fr;
+  }
+
+  .mpr-cm-case__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .mpr-cm-card {
+    aspect-ratio: 4 / 3;
+  }
+
+  .mpr-stories__top {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .mpr-stories__stage {
+    min-height: 24rem;
+  }
+
+  .mpr-about-hero__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .mpr-about-ring {
+    width: min(100%, 18rem);
+    padding: 1.75rem;
+    margin-inline: auto;
+  }
+
+  .mpr-faq__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .section {
+    padding: 3rem var(--pad);
+  }
+
+  .mpr-marquee__track span {
+    font-size: clamp(1.5rem, 5.5vw, 2.5rem);
+  }
+
+  .mpr-im-channels__row {
+    gap: 1.25rem 1.75rem;
+  }
+
+  .mpr-featured__grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  :root {
+    --pad: 1rem;
+  }
+
+  .home_hero_title {
+    font-size: 2rem;
+  }
+
+  .home_hero_desc {
+    font-size: 0.92rem;
+  }
+
+  .mpr-intro__lead {
+    font-size: clamp(1.4rem, 5.5vw, 2rem);
+  }
+
+  .service-img img,
+  .service-column.is-expanded .service-img img {
+    height: 220px;
+  }
+
+  .mpr-tm-cats__grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .mpr-tm-cat {
+    min-height: 16rem;
+  }
+
+  .mpr-cm-card {
+    aspect-ratio: 1;
+  }
+
+  .mpr-pr-brands__grid,
+  .mpr-pr-media__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .mpr-im-form {
+    padding: 1.25rem 1rem;
+  }
+
+  .mpr-im-hero__actions {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .mpr-im-btn {
+    width: 100%;
+    text-align: center;
+  }
+
+  .button-cta {
+    width: 100%;
+    text-align: center;
+  }
+
+  .mpr-process-row__num {
+    font-size: 1.1rem;
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+
+  .mpr-footer h4 {
+    font-size: 1.15rem;
   }
 }
 

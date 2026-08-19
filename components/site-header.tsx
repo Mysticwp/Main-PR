@@ -1,3 +1,6 @@
+"use client";
+
+import { useState } from "react";
 import Link from "next/link";
 import { services } from "@/lib/site-data";
 
@@ -15,20 +18,40 @@ export function SiteHeader({
   theme = "dark",
   activeHref
 }: SiteHeaderProps) {
+  const [open, setOpen] = useState(false);
+
   return (
-    <header className={`mpr-header mpr-header--${theme}`}>
+    <header className={`mpr-header mpr-header--${theme}${open ? " mpr-header--open" : ""}`}>
       <div className="mpr-nav container">
         <Link href="/" className="mpr-logo" aria-label="Mystic PR home">
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img src={logoByTheme[theme]} alt="Mystic PR" />
         </Link>
-        <nav className="mpr-menu" aria-label="Primary">
-          <Link href="/" className={activeHref === "/" ? "is-active" : undefined}>
+
+        <button
+          type="button"
+          className="mpr-burger"
+          aria-label={open ? "Close menu" : "Open menu"}
+          aria-expanded={open}
+          onClick={() => setOpen((prev) => !prev)}
+        >
+          <span />
+          <span />
+          <span />
+        </button>
+
+        <nav className={`mpr-menu${open ? " is-open" : ""}`} aria-label="Primary">
+          <Link
+            href="/"
+            className={activeHref === "/" ? "is-active" : undefined}
+            onClick={() => setOpen(false)}
+          >
             Home
           </Link>
           <Link
             href="/about"
             className={activeHref === "/about" ? "is-active" : undefined}
+            onClick={() => setOpen(false)}
           >
             About
           </Link>
@@ -36,13 +59,18 @@ export function SiteHeader({
             <Link
               href="/services"
               className={activeHref === "/services" ? "is-active" : undefined}
+              onClick={() => setOpen(false)}
             >
               Services
               <span className="mpr-menu__caret" aria-hidden="true" />
             </Link>
             <div className="mpr-menu__panel">
               {services.map((service) => (
-                <Link key={service.slug} href={service.href}>
+                <Link
+                  key={service.slug}
+                  href={service.href}
+                  onClick={() => setOpen(false)}
+                >
                   {service.slug === "press-release-media-outreach"
                     ? "Media Outreach"
                     : service.title}
@@ -53,12 +81,14 @@ export function SiteHeader({
           <Link
             href="/blogs"
             className={activeHref === "/blogs" ? "is-active" : undefined}
+            onClick={() => setOpen(false)}
           >
             Insights
           </Link>
           <Link
             href="/contact"
             className={activeHref === "/contact" ? "is-active" : undefined}
+            onClick={() => setOpen(false)}
           >
             Contact
           </Link>
