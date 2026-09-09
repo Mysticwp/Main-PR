@@ -233,11 +233,7 @@ export default async function HomePage() {
         </div>
 
         {/* 5. Our Process */}
-        <ProcessSection
-          kicker="HOW WE WORK"
-          title="Our PR Process"
-          steps={[...processSteps]}
-        />
+        <ProcessSection title="Our Process" steps={[...processSteps]} />
 
         {/* 6. Success Stories */}
         <StoriesSlider stories={[...successStories]} />
@@ -271,32 +267,36 @@ export default async function HomePage() {
         </section>
 
         {/* 9. Latest Insights */}
-        <section className="mpr-insights section bg-white">
+        <section className="mpr-insights section">
           <div className="container">
-            <div className="mpr-section-head mpr-section-head--row">
+            <div className="mpr-insights__head">
               <div>
-                <span className="mpr-kicker">BLOGS &amp; INSIGHTS</span>
-                <h2 className="mpr-section-title">Recent Blog Updates</h2>
+                <span className="mpr-kicker mpr-kicker--light">BLOGS &amp; INSIGHTS</span>
+                <h2 className="mpr-insights__title">Recent Blog Updates</h2>
               </div>
-              <Link href="/blogs" className="mpr-text-link">
-                See all blogs &gt;
+              <Link href="/blogs" className="mpr-insights__all">
+                See all blogs
+                <span aria-hidden="true">→</span>
               </Link>
             </div>
             <div className="mpr-insights__grid">
-              {posts.map((post) => (
-                <article key={post.slug} className="mpr-insight-card">
-                  <a href={post.href} className="mpr-insight-card__media">
-                    {post.image ? (
-                      <img src={post.image} alt="" loading="lazy" />
-                    ) : null}
+              {posts.map((post, index) => (
+                <article
+                  key={post.slug}
+                  className={`mpr-insight-card${index === 0 ? " mpr-insight-card--feature" : ""}`}
+                >
+                  <a href={post.href} className="mpr-insight-card__link">
+                    <div className="mpr-insight-card__media">
+                      {post.image ? (
+                        <img src={post.image} alt="" loading="lazy" />
+                      ) : null}
+                      <div className="mpr-insight-card__shade" />
+                    </div>
+                    <div className="mpr-insight-card__body">
+                      <time dateTime={post.date}>{post.date}</time>
+                      <h3>{post.title}</h3>
+                    </div>
                   </a>
-                  <div className="mpr-insight-card__body">
-                    <time dateTime={post.date}>{post.date}</time>
-                    <h3>
-                      <a href={post.href}>{post.title}</a>
-                    </h3>
-                    <p>{post.excerpt}</p>
-                  </div>
                 </article>
               ))}
             </div>

@@ -148,11 +148,7 @@ export default function PressReleaseMediaOutreachPage() {
           </div>
         </section>
 
-        <ProcessSection
-          kicker="How we work"
-          title="Media Moves That Matter"
-          steps={prProcessSteps}
-        />
+        <ProcessSection title="Our Process" steps={prProcessSteps} />
 
         <section className="mpr-marquee mpr-pr-marquee bg-white" aria-hidden="true">
           <div className="mpr-marquee__track scroll-slower">

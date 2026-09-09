@@ -173,7 +173,6 @@ export default function InfluencerMarketingPage() {
         </section>
 
         <ProcessSection
-          kicker="INFLUENCER TIERS"
           title="Influencer Tiers We Work With"
           steps={tierSteps}
         />

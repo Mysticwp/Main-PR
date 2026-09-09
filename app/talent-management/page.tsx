@@ -211,11 +211,7 @@ export default function TalentManagementPage() {
           </div>
         </section>
 
-        <ProcessSection
-          kicker="OUR APPROACH"
-          title="Our Approach"
-          steps={tmApproach}
-        />
+        <ProcessSection title="Our Approach" steps={tmApproach} />
 
         <section className="mpr-im-testimonials section bg-white">
           <div className="container">

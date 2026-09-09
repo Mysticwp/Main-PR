@@ -14,7 +14,6 @@ export type ProcessStep = {
 
 export function ProcessSection({
   steps,
-  kicker = "How we work",
   title = "Our Process"
 }: {
   steps: ProcessStep[];
@@ -35,15 +34,14 @@ export function ProcessSection({
     }
 
     const rows = section.querySelectorAll<HTMLElement>(".mpr-process-row");
-    const line = section.querySelector<HTMLElement>(".mpr-process-line__fill");
     const ctx = gsap.context(() => {
       gsap.fromTo(
         section.querySelector(".mpr-process-heading"),
-        { opacity: 0, y: 28 },
+        { opacity: 0, y: 24 },
         {
           opacity: 1,
           y: 0,
-          duration: 0.8,
+          duration: 0.7,
           ease: "power3.out",
           scrollTrigger: {
             trigger: section,
@@ -55,41 +53,21 @@ export function ProcessSection({
       rows.forEach((row, index) => {
         gsap.fromTo(
           row,
-          { opacity: 0, x: -36 },
+          { opacity: 0, y: 20 },
           {
             opacity: 1,
-            x: 0,
-            duration: 0.7,
+            y: 0,
+            duration: 0.6,
             ease: "power3.out",
-            delay: index * 0.05,
+            delay: index * 0.04,
             scrollTrigger: {
               trigger: row,
-              start: "top 88%",
-              onEnter: () => row.classList.add("is-visible"),
-              onEnterBack: () => row.classList.add("is-active"),
-              onLeave: () => row.classList.remove("is-active"),
-              onLeaveBack: () => row.classList.remove("is-active")
+              start: "top 90%",
+              onEnter: () => row.classList.add("is-visible")
             }
           }
         );
       });
-
-      if (line) {
-        gsap.fromTo(
-          line,
-          { scaleY: 0 },
-          {
-            scaleY: 1,
-            ease: "none",
-            scrollTrigger: {
-              trigger: section.querySelector(".mpr-process-list"),
-              start: "top 70%",
-              end: "bottom 35%",
-              scrub: true
-            }
-          }
-        );
-      }
     }, section);
 
     return () => ctx.revert();
@@ -99,29 +77,17 @@ export function ProcessSection({
     <section ref={sectionRef} className="mpr-process section bg-white">
       <div className="container">
         <div className="mpr-process-heading">
-          {kicker ? <span className="mpr-kicker">{kicker}</span> : null}
-          <h2 className="mpr-section-title">{title}</h2>
+          <h2 className="mpr-process-heading__title">{title}</h2>
         </div>
 
-        <div className="mpr-process-track">
-          <div className="mpr-process-line" aria-hidden="true">
-            <span className="mpr-process-line__fill" />
-          </div>
-
-          <div className="mpr-process-list">
-            {steps.map((step) => (
-              <article key={step.number} className="mpr-process-row">
-                <span className="mpr-process-row__num">{step.number}</span>
-                <div className="mpr-process-row__body">
-                  <h3>{step.title}</h3>
-                  <p>{step.description}</p>
-                </div>
-                <span className="mpr-process-row__index" aria-hidden="true">
-                  {step.number}
-                </span>
-              </article>
-            ))}
-          </div>
+        <div className="mpr-process-list">
+          {steps.map((step) => (
+            <article key={step.number} className="mpr-process-row">
+              <span className="mpr-process-row__num">{step.number}</span>
+              <h3 className="mpr-process-row__title">{step.title}</h3>
+              <p className="mpr-process-row__copy">{step.description}</p>
+            </article>
+          ))}
         </div>
       </div>
     </section>

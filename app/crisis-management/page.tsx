@@ -139,7 +139,6 @@ export default function CrisisManagementPage() {
         </section>
 
         <ProcessSection
-          kicker=""
           title="Our PR & Crisis Communication Services"
           steps={cmServiceSteps}
         />
