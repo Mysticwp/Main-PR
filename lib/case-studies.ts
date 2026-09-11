@@ -1,17 +1,29 @@
+export type CaseStudyMetric = {
+  value: string;
+  label: string;
+};
+
 export type CaseStudy = {
   slug: string;
   title: string;
   client: string;
   industry: string;
+  year: string;
+  location: string;
   image: string;
+  coverSecondary: string;
+  gallery: string[];
   metric: string;
   metricLabel: string;
+  metrics: CaseStudyMetric[];
   outcome: string;
   summary: string;
   challenge: string;
   approach: string[];
   results: string[];
   services: string[];
+  quote: string;
+  quoteBy: string;
 };
 
 export const caseStudies: CaseStudy[] = [
@@ -20,10 +32,26 @@ export const caseStudies: CaseStudy[] = [
     title: "ZIMAYA Properties",
     client: "ZIMAYA Properties",
     industry: "Real Estate",
+    year: "2024",
+    location: "Dubai, UAE",
     image:
       "https://mysticpr.com/wp-content/uploads/2024/11/Mystic-post-1920x1080-01.jpg",
+    coverSecondary:
+      "https://mysticpr.com/wp-content/uploads/2024/11/Mystic-post-1920x1080-06.jpg",
+    gallery: [
+      "https://mysticpr.com/wp-content/uploads/2024/11/Mystic-post-1920x1080-01.jpg",
+      "https://mysticpr.com/wp-content/uploads/2024/11/Mystic-post-1920x1080-06.jpg",
+      "https://mysticpr.com/wp-content/uploads/2024/11/Mystic-post-1920x1080-09.jpg",
+      "https://mysticpr.com/wp-content/uploads/2025/10/5.jpg",
+      "https://mysticpr.com/wp-content/uploads/2024/11/Mystic-post-1920x1080-02.jpg"
+    ],
     metric: "4.8M+",
     metricLabel: "Campaign reach",
+    metrics: [
+      { value: "4.8M+", label: "Campaign reach" },
+      { value: "20+", label: "Media placements" },
+      { value: "72h", label: "Peak share of voice" }
+    ],
     outcome:
       "Elevated a major property launch with influencer-led storytelling and national media pickup.",
     summary:
@@ -45,17 +73,36 @@ export const caseStudies: CaseStudy[] = [
       "Influencer Marketing",
       "Press Release & Media Outreach",
       "Talent Management"
-    ]
+    ],
+    quote:
+      "The launch didn’t feel like another property announcement — it felt like a cultural moment people wanted to talk about.",
+    quoteBy: "Campaign highlight · ZIMAYA"
   },
   {
     slug: "hania-amir-x-mystic",
     title: "Hania Amir x Mystic",
     client: "Hania Amir Collaboration",
     industry: "Celebrity & Lifestyle",
+    year: "2024",
+    location: "GCC",
     image:
       "https://mysticpr.com/wp-content/uploads/2024/11/Mystic-post-1920x1080-03.jpg",
+    coverSecondary:
+      "https://mysticpr.com/wp-content/uploads/2024/11/Mystic-post-1920x1080-10.jpg",
+    gallery: [
+      "https://mysticpr.com/wp-content/uploads/2024/11/Mystic-post-1920x1080-03.jpg",
+      "https://mysticpr.com/wp-content/uploads/2024/11/Mystic-post-1920x1080-10.jpg",
+      "https://mysticpr.com/wp-content/uploads/2024/11/Mystic-post-1920x1080-05.jpg",
+      "https://mysticpr.com/wp-content/uploads/2025/10/3.jpg",
+      "https://mysticpr.com/wp-content/uploads/2024/11/Mystic-post-1920x1080-04.jpg"
+    ],
     metric: "2.1M+",
     metricLabel: "Social impressions",
+    metrics: [
+      { value: "2.1M+", label: "Social impressions" },
+      { value: "3", label: "Core markets activated" },
+      { value: "1", label: "Signature campaign drop" }
+    ],
     outcome:
       "Delivered a high-visibility celebrity collaboration that expanded brand awareness across GCC audiences.",
     summary:
@@ -73,17 +120,36 @@ export const caseStudies: CaseStudy[] = [
       "Strong engagement from GCC lifestyle audiences",
       "Elevated brand association through celebrity storytelling"
     ],
-    services: ["Celebrity Management", "Influencer Marketing", "Media Outreach"]
+    services: ["Celebrity Management", "Influencer Marketing", "Media Outreach"],
+    quote:
+      "When the talent, timing, and message lock in together, the campaign stops looking like marketing and starts looking like culture.",
+    quoteBy: "Campaign highlight · Celebrity partnership"
   },
   {
     slug: "hmb-homes",
     title: "HMB Homes",
     client: "HMB Homes",
     industry: "Real Estate",
+    year: "2024",
+    location: "Dubai, UAE",
     image:
       "https://mysticpr.com/wp-content/uploads/2024/11/Mystic-post-1920x1080-07.jpg",
+    coverSecondary:
+      "https://mysticpr.com/wp-content/uploads/2025/01/hmb-final.png",
+    gallery: [
+      "https://mysticpr.com/wp-content/uploads/2024/11/Mystic-post-1920x1080-07.jpg",
+      "https://mysticpr.com/wp-content/uploads/2025/01/hmb-final.png",
+      "https://mysticpr.com/wp-content/uploads/2025/01/HMB.jpg",
+      "https://mysticpr.com/wp-content/uploads/2025/10/4.jpg",
+      "https://mysticpr.com/wp-content/uploads/2024/11/Mystic-post-1920x1080-04.jpg"
+    ],
     metric: "+160%",
     metricLabel: "Earned mentions",
+    metrics: [
+      { value: "+160%", label: "Earned mentions" },
+      { value: "Multi-wave", label: "Outreach cadence" },
+      { value: "Talent-led", label: "Brand positioning" }
+    ],
     outcome:
       "Positioned the brand through talent partnerships and press outreach that drove sustained conversation.",
     summary:
@@ -101,17 +167,36 @@ export const caseStudies: CaseStudy[] = [
       "Improved brand presence across regional lifestyle coverage",
       "Reusable content and relationship assets for ongoing PR"
     ],
-    services: ["Talent Management", "Media Outreach", "Influencer Marketing"]
+    services: ["Talent Management", "Media Outreach", "Influencer Marketing"],
+    quote:
+      "Consistency beat one-off noise — every wave made the brand feel more present in the market.",
+    quoteBy: "Campaign highlight · HMB Homes"
   },
   {
     slug: "iman-developers",
     title: "Iman Developers",
     client: "Iman Developers",
     industry: "Real Estate Development",
+    year: "2024",
+    location: "UAE",
     image:
       "https://mysticpr.com/wp-content/uploads/2024/11/Mystic-post-1920x1080-15.jpg",
+    coverSecondary:
+      "https://mysticpr.com/wp-content/uploads/2025/01/Imaan.jpg",
+    gallery: [
+      "https://mysticpr.com/wp-content/uploads/2024/11/Mystic-post-1920x1080-15.jpg",
+      "https://mysticpr.com/wp-content/uploads/2025/01/Imaan.jpg",
+      "https://mysticpr.com/wp-content/uploads/2024/11/Mystic-post-1920x1080-02.jpg",
+      "https://mysticpr.com/wp-content/uploads/2025/10/1.jpg",
+      "https://mysticpr.com/wp-content/uploads/2024/11/Mystic-post-1920x1080-09.jpg"
+    ],
     metric: "35+",
     metricLabel: "Media placements",
+    metrics: [
+      { value: "35+", label: "Media placements" },
+      { value: "Milestone", label: "Announcement cadence" },
+      { value: "Dual-track", label: "Press + influencers" }
+    ],
     outcome:
       "Secured strategic coverage and influencer amplification around key development milestones.",
     summary:
@@ -129,7 +214,10 @@ export const caseStudies: CaseStudy[] = [
       "Stronger share of voice versus competing announcements",
       "Consistent visibility across press and social channels"
     ],
-    services: ["Press Release & Media Outreach", "Influencer Marketing"]
+    services: ["Press Release & Media Outreach", "Influencer Marketing"],
+    quote:
+      "Every milestone got a story worth covering — not just another press release to ignore.",
+    quoteBy: "Campaign highlight · Iman Developers"
   }
 ];
 
