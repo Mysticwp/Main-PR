@@ -1,4 +1,5 @@
 import type { MetadataRoute } from "next";
+import { getCaseStudySlugs } from "@/lib/case-studies";
 import { services } from "@/lib/site-data";
 
 export default function sitemap(): MetadataRoute.Sitemap {
@@ -34,6 +35,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: new Date(),
       changeFrequency: "monthly" as const,
       priority: 0.75
+    })),
+    ...getCaseStudySlugs().map((slug) => ({
+      url: `${baseUrl}/case-studies/${slug}`,
+      lastModified: new Date(),
+      changeFrequency: "monthly" as const,
+      priority: 0.7
     }))
   ];
 }

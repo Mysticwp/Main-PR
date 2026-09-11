@@ -16,7 +16,9 @@ export function FeaturedCarousel({ outlets }: { outlets: FeaturedOutlet[] }) {
         <div className="mpr-featured__head">
           <div className="mpr-section-head mpr-section-head--light">
             <span className="mpr-kicker mpr-kicker--light">PRESS &amp; MEDIA</span>
-            <h2 className="mpr-section-title mpr-section-title--light">As Featured In</h2>
+            <h2 className="mpr-section-title mpr-section-title--light">
+              Our Best Client Publications
+            </h2>
           </div>
           <p className="mpr-featured__aside">
             Highlights from regional and international press coverage.

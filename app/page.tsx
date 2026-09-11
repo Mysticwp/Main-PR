@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { FaqSection } from "@/components/faq-section";
 import { FeaturedCarousel } from "@/components/featured-carousel";
+import { MediaMenaSection } from "@/components/media-mena-section";
 import { ProcessSection } from "@/components/process-section";
 import { ServicesAccordion } from "@/components/services-accordion";
 import { SiteHeader } from "@/components/site-header";
@@ -236,10 +237,15 @@ export default async function HomePage() {
         <ProcessSection title="Our Process" steps={[...processSteps]} />
 
         {/* 6. Success Stories */}
-        <StoriesSlider stories={[...successStories]} />
+        <div id="stories">
+          <StoriesSlider stories={[...successStories]} />
+        </div>
 
-        {/* 7. As Featured In */}
+        {/* 7. Our Best Client Publications */}
         <FeaturedCarousel outlets={[...featuredIn]} />
+
+        {/* 7b. MENA media partners */}
+        <MediaMenaSection />
 
         {/* 8. Meet the Team */}
         <section className="mpr-team section">

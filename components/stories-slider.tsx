@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useEffect, useState } from "react";
 
 export type StorySlide = {
@@ -8,6 +9,7 @@ export type StorySlide = {
   metric: string;
   metricLabel: string;
   outcome: string;
+  href?: string;
 };
 
 export function StoriesSlider({
@@ -107,6 +109,11 @@ export function StoriesSlider({
                   </p>
                   <h3>{story.title}</h3>
                   <p>{story.outcome}</p>
+                  {story.href ? (
+                    <Link href={story.href} className="mpr-stories__link">
+                      View case study →
+                    </Link>
+                  ) : null}
                 </div>
               </article>
             );

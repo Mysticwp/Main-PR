@@ -517,36 +517,7 @@ export const aboutTeam = [
   }
 ];
 
-export const successStories = [
-  {
-    title: "ZIMAYA Properties",
-    image: "https://mysticpr.com/wp-content/uploads/2024/11/Mystic-post-1920x1080-01.jpg",
-    metric: "4.8M+",
-    metricLabel: "Campaign reach",
-    outcome: "Elevated a major property launch with influencer-led storytelling and national media pickup."
-  },
-  {
-    title: "Hania Amir x Mystic",
-    image: "https://mysticpr.com/wp-content/uploads/2024/11/Mystic-post-1920x1080-03.jpg",
-    metric: "2.1M+",
-    metricLabel: "Social impressions",
-    outcome: "Delivered a high-visibility celebrity collaboration that expanded brand awareness across GCC audiences."
-  },
-  {
-    title: "HMB Homes",
-    image: "https://mysticpr.com/wp-content/uploads/2024/11/Mystic-post-1920x1080-07.jpg",
-    metric: "+160%",
-    metricLabel: "Earned mentions",
-    outcome: "Positioned the brand through talent partnerships and press outreach that drove sustained conversation."
-  },
-  {
-    title: "Iman Developers",
-    image: "https://mysticpr.com/wp-content/uploads/2024/11/Mystic-post-1920x1080-15.jpg",
-    metric: "35+",
-    metricLabel: "Media placements",
-    outcome: "Secured strategic coverage and influencer amplification around key development milestones."
-  }
-];
+export { successStories } from "@/lib/case-studies";
 
 export const featuredIn = [
   {
