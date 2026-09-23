@@ -995,6 +995,8 @@ img {
   backdrop-filter: blur(8px);
   padding: 0.95rem;
   border-radius: 1.1rem;
+  color: inherit;
+  text-decoration: none;
   transform: translateY(0) rotate(-0.4deg);
   transition:
     transform 0.35s ease,

@@ -521,46 +521,116 @@ export { successStories } from "@/lib/case-studies";
 
 export const featuredIn = [
   {
-    name: "Gulf News",
-    note: "Regional news",
-    headline: "How Dubai brands are turning earned media into lasting trust.",
+    name: "Zawya",
+    note: "Crystal Bay · Vue Dorée",
+    headline:
+      "Crystal Bay launches Vue Dorée – its 2nd project in 5 months – at Dubai Islands",
+    href: "https://www.zawya.com/en/press-release/companies-news/crystal-bay-launches-vue-doree-its-2nd-project-in-5-months-at-dubai-islands-as-real-estate-market-continues-to-grow-hh7pa7rz",
     image:
-      "https://images.unsplash.com/photo-1504711434969-e33886168f5c?auto=format&fit=crop&w=800&q=80"
-  },
-  {
-    name: "Arabian Business",
-    note: "Business media",
-    headline: "Strategic PR moves shaping the region’s most talked-about launches.",
-    image:
-      "https://images.unsplash.com/photo-1585829365295-ab7cd400c167?auto=format&fit=crop&w=800&q=80"
+      "https://mysticpr.com/wp-content/uploads/2024/11/Mystic-post-1920x1080-06.jpg"
   },
   {
     name: "Khaleej Times",
-    note: "National press",
-    headline: "Influencer-led storytelling that cuts through the noise in the UAE.",
+    note: "Crystal Bay · Vue Dorée",
+    headline:
+      "Crystal Bay Azure Developments launches Vue Dorée boutique luxury project on Dubai Islands",
+    href: "https://www.khaleejtimes.com/business/new-project-launches-to-boost-housing-supply-in-dubai",
     image:
-      "https://images.unsplash.com/photo-1495020689067-958852a7765e?auto=format&fit=crop&w=800&q=80"
+      "https://mysticpr.com/wp-content/uploads/2024/11/Mystic-post-1920x1080-09.jpg"
   },
   {
-    name: "Forbes",
-    note: "Business features",
-    headline: "Reputation, reach, and the new rules of brand visibility.",
+    name: "Khaleej Times",
+    note: "Orchid Living · Orchid Residences 1",
+    headline:
+      "Orchid Living launches Dh55 million Orchid Residences 1 in Dubai South",
+    href: "https://www.khaleejtimes.com/kt-network/orchid-living-launches-dh55-million-orchid-residences-1-in-dubai-south",
     image:
-      "https://images.unsplash.com/photo-1523995462485-3d171b5c8fa9?auto=format&fit=crop&w=800&q=80"
+      "https://imgengine.khaleejtimes.com/khaleejtimes-english/2025-11-27/u40ejd3w/PHOTO-2025-11-27-13-17-03-1.jpg?width=1200&height=630&q=60&format=auto&ogImage=true&mode=fill&fill=blur"
   },
   {
-    name: "The National",
-    note: "UAE media",
-    headline: "From crisis clarity to campaign buzz: PR that earns attention.",
+    name: "MSN",
+    note: "Orchid Living · Featured pickup",
+    headline:
+      "Orchid Living launches Dh55 million Orchid Residences 1 in Dubai South",
+    href: "https://www.khaleejtimes.com/kt-network/orchid-living-launches-dh55-million-orchid-residences-1-in-dubai-south",
     image:
-      "https://images.unsplash.com/photo-1503694978374-8a2fa686963a?auto=format&fit=crop&w=800&q=80"
+      "https://imgengine.khaleejtimes.com/khaleejtimes-english/2025-11-27/u40ejd3w/PHOTO-2025-11-27-13-17-03-1.jpg?width=1200&height=630&q=60&format=auto&ogImage=true&mode=fill&fill=blur"
   },
   {
-    name: "Campaign Middle East",
-    note: "Industry press",
-    headline: "Creative partnerships driving culture-defining brand moments.",
+    name: "Khaleej Times",
+    note: "AGN Skyline · Casa Aura",
+    headline:
+      "AGN Skyline Developers breaks ground on Casa Aura in Dubai South",
+    href: "https://www.khaleejtimes.com/kt-network/agn-skyline-developers-breaks-ground-on-casa-aura-an-exclusive-family-oriented-residential-project-in-dubai-south",
     image:
-      "https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=800&q=80"
+      "https://imgengine.khaleejtimes.com/khaleejtimes-english/2026-01-16/5zysdg6y/WhatsApp-Image-2026-01-14-at-3.29.52-PM.jpeg?width=1200&height=630&q=60&format=auto&ogImage=true&mode=fill&fill=blur"
+  },
+  {
+    name: "Zawya",
+    note: "AGN Skyline · Casa Aura",
+    headline: "AGN Skyline Developers breaks ground on Casa Aura",
+    href: "https://www.zawya.com/en/press-release/companies-news/agn-skyline-developers-breaks-ground-on-casa-aura-368815",
+    image:
+      "https://imgengine.khaleejtimes.com/khaleejtimes-english/2026-01-16/5zysdg6y/WhatsApp-Image-2026-01-14-at-3.29.52-PM.jpeg?width=1200&height=630&q=60&format=auto&ogImage=true&mode=fill&fill=blur"
+  },
+  {
+    name: "MENAFN",
+    note: "AGN Skyline · Casa Aura",
+    headline:
+      "AGN Skyline Developers breaks ground on Casa Aura, an exclusive family-oriented residential project in Dubai South",
+    href: "https://www.khaleejtimes.com/kt-network/agn-skyline-developers-breaks-ground-on-casa-aura-an-exclusive-family-oriented-residential-project-in-dubai-south",
+    image:
+      "https://imgengine.khaleejtimes.com/khaleejtimes-english/2026-01-16/5zysdg6y/WhatsApp-Image-2026-01-14-at-3.29.52-PM.jpeg?width=1200&height=630&q=60&format=auto&ogImage=true&mode=fill&fill=blur"
+  },
+  {
+    name: "Khaleej Times",
+    note: "Iman Developers · Oxford Cove",
+    headline:
+      "IMAN Developers sets a benchmark with the sell-out of its Dh300 million Oxford Cove in just two hours",
+    href: "https://www.khaleejtimes.com/business-technology-review/iman-developers-sets-a-benchmark-with-the-sell-out-of-its-dh300-million-oxford-cove-in-just-two-hours",
+    image:
+      "https://imgengine.khaleejtimes.com/khaleejtimes-english/2026-05-16/gb7ugtq6/Oxford-Cove-Elevation.jpg.jpeg?width=1200&height=630&q=60&format=auto&ogImage=true&mode=fill&fill=blur"
+  },
+  {
+    name: "Zawya",
+    note: "Iman Developers · Oxford Cove",
+    headline: "IMAN Developers launches Oxford Cove in JVC Dubai",
+    href: "https://www.zawya.com/en/business/real-estate/iman-developers-launches-oxford-cove-in-jvc-dubai-340753",
+    image: "https://mysticpr.com/wp-content/uploads/2025/01/Imaan.jpg"
+  },
+  {
+    name: "MSN",
+    note: "Iman Developers · Featured pickup",
+    headline:
+      "IMAN Developers sets a benchmark with the sell-out of its Dh300 million Oxford Cove",
+    href: "https://www.khaleejtimes.com/business-technology-review/iman-developers-sets-a-benchmark-with-the-sell-out-of-its-dh300-million-oxford-cove-in-just-two-hours",
+    image:
+      "https://imgengine.khaleejtimes.com/khaleejtimes-english/2026-05-16/gb7ugtq6/Oxford-Cove-Elevation.jpg.jpeg?width=1200&height=630&q=60&format=auto&ogImage=true&mode=fill&fill=blur"
+  },
+  {
+    name: "MENAFN",
+    note: "Iman Developers · Oxford Cove",
+    headline: "Iman Developers sets the benchmark with Oxford Cove",
+    href: "https://www.khaleejtimes.com/business-technology-review/iman-developers-sets-a-benchmark-with-the-sell-out-of-its-dh300-million-oxford-cove-in-just-two-hours",
+    image:
+      "https://imgengine.khaleejtimes.com/khaleejtimes-english/2026-05-16/gb7ugtq6/Oxford-Cove-Elevation.jpg.jpeg?width=1200&height=630&q=60&format=auto&ogImage=true&mode=fill&fill=blur"
+  },
+  {
+    name: "Khaleej Times",
+    note: "Mashriq Elite · Floarea",
+    headline:
+      "Mashriq Elite set to deliver over 1,200 residential units in two years",
+    href: "https://www.khaleejtimes.com/kt-network/mashriq-elite-set-to-deliver-over-1200-residential-units-in-two-years",
+    image:
+      "https://imgengine.khaleejtimes.com/khaleejtimes-english/2026-01-16/wdi9g9zc/SIJ05750-2-1.jpg?width=1200&height=630&q=60&format=auto&ogImage=true&mode=fill&fill=blur"
+  },
+  {
+    name: "Zawya",
+    note: "Mashriq Elite · Floarea Grande",
+    headline:
+      "Mashriq Elite delivers Floarea Grande as it advances Dh1bln+ portfolio across five Dubai communities",
+    href: "https://www.zawya.com/en/press-release/companies-news/mashriq-elite-delivers-floarea-grande-as-it-advances-dh1bln-portfolio-across-five-dubai-communities-334486",
+    image: "https://mysticpr.com/wp-content/uploads/2025/01/Mashriq.jpg"
   }
 ];
 
