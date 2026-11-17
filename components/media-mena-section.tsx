@@ -22,7 +22,7 @@ export function MediaMenaSection() {
             {track.map((logo, index) => (
               <div key={`${logo.name}-${index}`} className="mpr-mena__badge">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src={logo.image} alt="" loading="lazy" />
+                <img src={logo.image} alt={logo.name} loading="lazy" />
               </div>
             ))}
           </div>

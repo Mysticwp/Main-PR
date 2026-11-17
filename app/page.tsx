@@ -1,7 +1,10 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { CreatorReelsSection } from "@/components/creator-reels";
 import { FaqSection } from "@/components/faq-section";
 import { FeaturedCarousel } from "@/components/featured-carousel";
+import { FooterMarqueeCta } from "@/components/footer-marquee-cta";
+import { HeroShortlistForm } from "@/components/hero-shortlist-form";
 import { MediaMenaSection } from "@/components/media-mena-section";
 import { ProcessSection } from "@/components/process-section";
 import { ServicesAccordion } from "@/components/services-accordion";
@@ -11,7 +14,6 @@ import { StoriesSlider } from "@/components/stories-slider";
 import { getLatestPosts } from "@/lib/blog";
 import {
   faqs,
-  featuredIn,
   processSteps,
   services,
   successStories,
@@ -67,12 +69,21 @@ export const metadata: Metadata = {
     description: homeDescription,
     url: "https://mysticpr.com",
     siteName: "Mystic PR",
-    type: "website"
+    type: "website",
+    images: [
+      {
+        url: "/og-image.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Mystic PR — Strategic PR Agency in Dubai"
+      }
+    ]
   },
   twitter: {
     card: "summary_large_image",
     title: homeTitle,
-    description: homeDescription
+    description: homeDescription,
+    images: ["/og-image.jpg"]
   }
 };
 
@@ -166,20 +177,23 @@ export default async function HomePage() {
 
           <div className="padding-global">
             <div className="container-wide">
-              <div className="home_hero-content">
-                <h1 className="home_hero_title">
-                  PR Agency in Dubai — Behind the Leading Brands
-                </h1>
-                <div className="hero-subcontent">
-                  <p className="home_hero_desc">
-                    Strategic PR agency in Dubai for influencer marketing, media
-                    outreach, crisis communication, and reputation management that
-                    earns lasting confidence.
-                  </p>
-                  <Link href="/contact" className="button-cta main-cta">
-                    Start a Project
-                  </Link>
+              <div className="home_hero-content home_hero-content--split">
+                <div className="home_hero-copy">
+                  <h1 className="home_hero_title">
+                    PR Agency in Dubai — Behind the Leading Brands
+                  </h1>
+                  <div className="hero-subcontent">
+                    <p className="home_hero_desc">
+                      Strategic PR agency in Dubai for influencer marketing, media
+                      outreach, crisis communication, and reputation management that
+                      earns lasting confidence.
+                    </p>
+                    <Link href="/contact" className="button-cta main-cta">
+                      Start a Project
+                    </Link>
+                  </div>
                 </div>
+                <HeroShortlistForm />
               </div>
             </div>
           </div>
@@ -242,10 +256,13 @@ export default async function HomePage() {
         </div>
 
         {/* 7. Our Best Client Publications */}
-        <FeaturedCarousel outlets={[...featuredIn]} />
+        <FeaturedCarousel />
 
         {/* 7b. MENA media partners */}
         <MediaMenaSection />
+
+        {/* 7c. Creator reels */}
+        <CreatorReelsSection />
 
         {/* 8. Meet the Team */}
         <section className="mpr-team section">
@@ -286,11 +303,8 @@ export default async function HomePage() {
               </Link>
             </div>
             <div className="mpr-insights__grid">
-              {posts.map((post, index) => (
-                <article
-                  key={post.slug}
-                  className={`mpr-insight-card${index === 0 ? " mpr-insight-card--feature" : ""}`}
-                >
+              {posts.map((post) => (
+                <article key={post.slug} className="mpr-insight-card">
                   <a href={post.href} className="mpr-insight-card__link">
                     <div className="mpr-insight-card__media">
                       {post.image ? (
@@ -343,13 +357,7 @@ export default async function HomePage() {
           </div>
         </section>
 
-        <section className="mpr-marquee mpr-marquee--footer bg-white" aria-hidden="true">
-          <div className="mpr-marquee__track scroll-slower reverse">
-            <span>Turning Brand Stories into Mystical Journeys</span>
-            <span>Turning Brand Stories into Mystical Journeys</span>
-            <span>Turning Brand Stories into Mystical Journeys</span>
-          </div>
-        </section>
+        <FooterMarqueeCta />
 
         <footer className="mpr-footer bg-white">
           <div className="container mpr-footer__grid">
@@ -358,11 +366,16 @@ export default async function HomePage() {
             </div>
             <div>
               <h5>ADDRESS</h5>
-              <p>4303-A Finest business center Aspin tower 104 Sheikh zayed Road Dubai</p>
+              <p>
+                Finest Business Center, Aspin Commercial Tower - 4303-A - 104 Sheikh
+                Zayed Rd - Trade Center First - Dubai - United Arab Emirates
+              </p>
             </div>
             <div>
               <h5>SAY HELLO</h5>
-              <p>+971 58 175 9326</p>
+              <p>
+                <a href="tel:+971526293578">+971 52 629 3578</a>
+              </p>
               <p>PR@mystic-advertising.com</p>
             </div>
           </div>

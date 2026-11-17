@@ -23,6 +23,15 @@ export const metadata: Metadata = {
   alternates: {
     canonical: siteUrl
   },
+  icons: {
+    icon: [
+      { url: "/favicon-32.png", type: "image/png", sizes: "32x32" },
+      { url: "/icon.png", type: "image/png", sizes: "512x512" },
+      { url: "/icon.svg", type: "image/svg+xml" }
+    ],
+    apple: [{ url: "/apple-icon.png", sizes: "180x180", type: "image/png" }],
+    shortcut: ["/favicon-32.png"]
+  },
   openGraph: {
     type: "website",
     url: siteUrl,
@@ -32,10 +41,10 @@ export const metadata: Metadata = {
     siteName: "Mystic PR",
     images: [
       {
-        url: "https://mysticpr.com/wp-content/uploads/2024/11/PR-1.png",
-        width: 833,
-        height: 504,
-        alt: "Mystic PR Logo"
+        url: "/og-image.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Mystic PR — Strategic PR Agency in Dubai"
       }
     ]
   },
@@ -44,7 +53,7 @@ export const metadata: Metadata = {
     title: "Mystic PR - Strategic PR Solutions",
     description:
       "Discover tailored PR strategies and creative campaigns with Mystic PR for impactful brand growth.",
-    images: ["https://mysticpr.com/wp-content/uploads/2024/11/PR-1.png"]
+    images: ["/og-image.jpg"]
   },
   category: "marketing",
   robots: {
@@ -76,11 +85,12 @@ export default function RootLayout({
     areaServed: "Dubai",
     address: {
       "@type": "PostalAddress",
-      streetAddress: "Churchill Executive Towers - Business Bay",
+      streetAddress:
+        "Finest Business Center, Aspin Commercial Tower - 4303-A - 104 Sheikh Zayed Rd - Trade Center First",
       addressLocality: "Dubai",
       addressCountry: "AE"
     },
-    telephone: "+971558434908",
+    telephone: "+971526293578",
     email: "business@mystic-advertising.com"
   };
 

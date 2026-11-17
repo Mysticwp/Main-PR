@@ -663,7 +663,7 @@ export const faqs = [
   {
     question: "How do we get started with Mystic PR?",
     answer:
-      "Reach out through our contact page or call +971 58 175 9326. We'll schedule a discovery call to understand your goals, then propose a tailored PR strategy and timeline."
+      "Reach out through our contact page or call +971 52 629 3578. We'll schedule a discovery call to understand your goals, then propose a tailored PR strategy and timeline."
   }
 ];
 

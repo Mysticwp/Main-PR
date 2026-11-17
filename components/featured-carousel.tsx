@@ -1,15 +1,9 @@
 "use client";
 
-export type FeaturedOutlet = {
-  name: string;
-  note: string;
-  image: string;
-  headline?: string;
-  href?: string;
-};
+import { pressPublications } from "@/lib/press-media-data";
 
-export function FeaturedCarousel({ outlets }: { outlets: FeaturedOutlet[] }) {
-  const items = [...outlets, ...outlets];
+export function FeaturedCarousel() {
+  const items = [...pressPublications, ...pressPublications];
 
   return (
     <section className="mpr-featured section">
@@ -30,62 +24,19 @@ export function FeaturedCarousel({ outlets }: { outlets: FeaturedOutlet[] }) {
 
       <div className="mpr-paper-rail">
         <div className="mpr-paper-track scroll">
-          {items.map((outlet, index) => {
-            const inner = (
-              <>
-                <div className="mpr-paper-card__topline">
-                  <span className="mpr-paper-card__tag">{outlet.note}</span>
-                </div>
-                <div className="mpr-paper-card__frame">
-                  <div className="mpr-paper-card__media">
-                    {/* eslint-disable-next-line @next/next/no-img-element */}
-                    <img
-                      src={outlet.image}
-                      alt={`${outlet.name} coverage`}
-                      loading="lazy"
-                    />
-                  </div>
-                  <div className="mpr-paper-card__glow" />
-                </div>
-                <div className="mpr-paper-card__body">
-                  <strong className="mpr-paper-card__brand">{outlet.name}</strong>
-                  <p className="mpr-paper-card__headline">
-                    {outlet.headline ??
-                      `${outlet.name} coverage of Mystic PR campaigns and brand storytelling.`}
-                  </p>
-                  <div className="mpr-paper-card__meta">
-                    <span className="mpr-paper-card__date">
-                      {outlet.href ? "Read coverage →" : "Featured editorial"}
-                    </span>
-                    <span className="mpr-paper-card__line" />
-                  </div>
-                </div>
-              </>
-            );
-
-            if (outlet.href) {
-              return (
-                <a
-                  key={`${outlet.name}-${outlet.headline}-${index}`}
-                  className="mpr-paper-card"
-                  href={outlet.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  {inner}
-                </a>
-              );
-            }
-
-            return (
-              <article
-                key={`${outlet.name}-${outlet.headline}-${index}`}
-                className="mpr-paper-card"
-              >
-                {inner}
-              </article>
-            );
-          })}
+          {items.map((item, index) => (
+            <a
+              key={`${item.href}-${index}`}
+              className="mpr-press-shot"
+              href={item.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={`Open ${item.name} coverage`}
+            >
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src={item.image} alt={`${item.name} publication`} loading="lazy" />
+            </a>
+          ))}
         </div>
       </div>
     </section>

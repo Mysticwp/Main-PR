@@ -10,7 +10,8 @@ export function SiteFooter() {
         <div>
           <h5>ADDRESS</h5>
           <p>
-            4303-A Finest business center Aspin tower 104 Sheikh zayed Road Dubai
+            Finest Business Center, Aspin Commercial Tower - 4303-A - 104 Sheikh
+            Zayed Rd - Trade Center First - Dubai - United Arab Emirates
           </p>
           <div className="mpr-footer__social">
             <a
@@ -37,7 +38,9 @@ export function SiteFooter() {
         </div>
         <div>
           <h5>SAY HELLO</h5>
-          <p>+971 58 175 9326</p>
+          <p>
+            <a href="tel:+971526293578">+971 52 629 3578</a>
+          </p>
           <p>
             <a href="mailto:hello@mysticpr.com">hello@mysticpr.com</a>
           </p>

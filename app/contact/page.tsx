@@ -26,14 +26,15 @@ export default function ContactPage() {
               <article>
                 <h2>Find us Here</h2>
                 <p>
-                  Churchill, Executive Towers - 3409, 34th Floor - Al A&apos;amal
-                  St - Business Bay - Dubai - United Arab Emirates
+                  Finest Business Center, Aspin Commercial Tower - 4303-A - 104
+                  Sheikh Zayed Rd - Trade Center First - Dubai - United Arab
+                  Emirates
                 </p>
               </article>
               <article>
                 <h2>Get In touch</h2>
                 <p>
-                  <a href="tel:+971558434908">+971 55 843 4908</a>
+                  <a href="tel:+971526293578">+971 52 629 3578</a>
                   <br />
                   <a href="mailto:business@mystic-advertising.com">
                     business@mystic-advertising.com

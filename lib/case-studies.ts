@@ -241,51 +241,27 @@ export const successStories = caseStudies.map((item) => ({
 
 export const menaMediaLogos = [
   {
-    name: "Gulfbuzz",
-    image: "https://mysticpr.com/wp-content/uploads/2024/11/1.png"
+    name: "Khaleej Times",
+    image: "/media/khaleej-times.webp"
   },
   {
     name: "Gulf News",
-    image: "https://mysticpr.com/wp-content/uploads/2024/11/2.png"
+    image: "/media/gulf-news.webp"
   },
   {
     name: "Al Bayan",
-    image: "https://mysticpr.com/wp-content/uploads/2024/11/3.png"
+    image: "/media/al-bayan.webp"
   },
   {
     name: "Al Watan",
-    image: "https://mysticpr.com/wp-content/uploads/2024/11/4.png"
+    image: "/media/al-watan.webp"
   },
   {
-    name: "The UAE News",
-    image: "https://mysticpr.com/wp-content/uploads/2024/11/5.png"
+    name: "Zawya.com",
+    image: "/media/zawya.webp"
   },
   {
-    name: "Khaleej Times",
-    image: "https://mysticpr.com/wp-content/uploads/2024/11/6.png"
-  },
-  {
-    name: "Travels Dubai",
-    image: "https://mysticpr.com/wp-content/uploads/2024/11/7.png"
-  },
-  {
-    name: "Trending Business",
-    image: "https://mysticpr.com/wp-content/uploads/2024/11/8.png"
-  },
-  {
-    name: "Construction Week",
-    image: "https://mysticpr.com/wp-content/uploads/2024/11/9.png"
-  },
-  {
-    name: "Time Out",
-    image: "https://mysticpr.com/wp-content/uploads/2024/11/10.png"
-  },
-  {
-    name: "Arabian Business",
-    image: "https://mysticpr.com/wp-content/uploads/2024/11/11.png"
-  },
-  {
-    name: "Gulf Business",
-    image: "https://mysticpr.com/wp-content/uploads/2024/11/12.png"
+    name: "Emarat Al Youm",
+    image: "/media/emarat-al-youm.webp"
   }
 ] as const;
